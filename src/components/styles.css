@@ -1,17 +1,16 @@
 .message_block{
-    background-color: green;
+    background-color: #ffffff;
     color: #444;
         padding: 18px 20px;
-        line-height: 26px;
+        line-height: 20px;
         font-size: 16px;
         border-radius: 7px;
         display: inline-block;
         position: relative
 }
 .message_blockright{
-    margin-left: 55%;
-
-    background-color: red;
+    margin-left: 78%;
+    background-color: #ddf7c8;
     color: #444;
     padding: 18px 20px;
     line-height: 26px;
@@ -20,4 +19,8 @@
     display: inline-block;
     position: relative
     
+}
+
+.username{
+    color: #1F7AEC;
 }

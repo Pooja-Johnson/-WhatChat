@@ -16,26 +16,28 @@ const TransformText = ({a_user,me}) => {
       const user=user_msg[0]
       //console.log(".."+user+"..") 
       const msg=user_msg[1]
-      if(user.localeCompare(a_user)===0)
-      {
-    //console.log(".."+a_user+"..")
-    return (<div>
-    <div className="message_blockright">user:{user}<br/> message:{msg} 
+
+     
+    //   if(user.localeCompare(a_user)===0)
+    //   {
+    // //console.log(".."+a_user+"..")
+    // <br></br>
+    
+    return (
+    <div>
+    <div className={user.localeCompare(a_user)===0 ? "message_blockright" : "message_block"}>
+      <span className='username'>{user}</span>
+      <br/>
+       {msg}
+       <br/>
+       {date}, 
+       {time}
     </div>
     <br/> 
-    </div>)
-      }
-      else{
-        //console.log(a_user)
-  return (
-    <div>
-    <div className="message_block">user:{user}<br/> message:{msg} 
-    {/*<Create  />*/}
+    <br/> 
     </div>
-    <br/>   
-    </div>
-  )
-}
+    
+    )
 }
 
 export default TransformText

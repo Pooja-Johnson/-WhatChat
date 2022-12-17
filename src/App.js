@@ -35,27 +35,29 @@ const handleFileChosen = (file) => {
   
   return (
     <div className='bg'>
-  <div className='upload-expense '>
-    <label for="file"></label>
-    <input
-        type='file'
-        id='file'
-        className='input-file'
-        onChange={e => handleFileChosen(e.target.files[0])}
-      />
-      <form className='form' onSubmit={handleSubmit}>
-      <input
-        type='text'
-        name='user'
-        value={active_user}
-        onChange={e=>{setActive_user(e.target.value)
-        }}
+       <form className='form'>
+          <div className='upload-expense '>
+              <label for="file"></label>
+              <input type='file'id='file'name='file' multiple
+                  onChange={e => handleFileChosen(e.target.files[0])}
+                />
+          </div>
+        <form  onSubmit={handleSubmit}>
+      
+      <br></br>
+              <button className='button'>Submit</button>
+        </form>
+        </form>
+           <input className='Name-text'
+            type='text'
+            name='user'
+            value={active_user}
+            onChange={e=>{setActive_user(e.target.value)
+            }}
         
 
-      />
-
-      </form>
-      <div>
+           />
+      <div className='message-space'>
       {content.map((mess)=>{
         return(
           <div >
@@ -66,10 +68,8 @@ const handleFileChosen = (file) => {
       })}
     </div>
    {/*<TransformText text={content[0]}/>*/}
-  </div>
-  <div>
-    <button className='button'>Submit</button>
-  </div>
+  
+  
 </div>
 );
 }

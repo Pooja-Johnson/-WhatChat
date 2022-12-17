@@ -50,7 +50,7 @@
  .bg{
   background-color: #075E54;
   background-image: url(bg.png); 
-  width: 2000px;
+  width: 100%;
   height: 450px;
   margin-top: 100px;
 }
@@ -60,12 +60,32 @@
   border-radius: 3px;
   padding: 5px 8px;
   outline: none;
+  
+
 }
-.button{
- margin-left: 90px; 
+
+ .button{
+  
+  margin-left: 80px; 
+  outline: none;
+  border: none;
+  padding: 10px 32px;
+  font-size: 16px;
+  background-color:#04813e48 ;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 .nav{
   background-image: url(NAVBAR.png);
   margin:0;
   height:100px  ;
+}
+.Name-text{
+  margin-left: 200;
+  margin-top: 10px;
+}
+.message-space{
+  margin-top: 8%;
+  background-color: #e5ddd5;
+  background-image: url(bg.png);
+
 }
