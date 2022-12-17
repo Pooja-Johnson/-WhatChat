@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import { useState } from 'react';
 import TransformText from './components/TransformText';
@@ -34,26 +34,28 @@ const handleFileChosen = (file) => {
   
   
   return (
-    <div className='upload-expense'>
+    <div className='bg'>
+  <div className='upload-expense '>
+    <label for="file"></label>
     <input
-      type='file'
-      id='file'
-      className='input-file'
-      onChange={e => handleFileChosen(e.target.files[0])}
-    />
-    <form onSubmit={handleSubmit}>
-    <input
-      type='text'
-      name='user'
-      value={active_user}
-      onChange={e=>{setActive_user(e.target.value)
-      }}
-      
+        type='file'
+        id='file'
+        className='input-file'
+        onChange={e => handleFileChosen(e.target.files[0])}
+      />
+      <form className='form' onSubmit={handleSubmit}>
+      <input
+        type='text'
+        name='user'
+        value={active_user}
+        onChange={e=>{setActive_user(e.target.value)
+        }}
+        
 
-    />
+      />
 
-    </form>
-    <div>
+      </form>
+      <div>
       {content.map((mess)=>{
         return(
           <div >
@@ -64,9 +66,12 @@ const handleFileChosen = (file) => {
       })}
     </div>
    {/*<TransformText text={content[0]}/>*/}
-
   </div>
-  );
+  <div>
+    <button className='button'>Submit</button>
+  </div>
+</div>
+);
 }
 
 export default App;
