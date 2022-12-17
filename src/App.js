@@ -28,8 +28,8 @@ const handleFileChosen = (file) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    //setActive_user(event.target.value)
-    console.log(active_user)
+    //setActive_user(e.target.value)
+    //console.log(active_user)
   };
   
   
@@ -51,7 +51,7 @@ const handleFileChosen = (file) => {
       
 
     />
-    <input type="submit" value="Submit" />
+
     </form>
     <div>
       {content.map((mess)=>{
