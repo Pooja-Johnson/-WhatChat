@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 let fileReader;
 const handleFileRead = (e) => {
@@ -13,15 +13,17 @@ const handleFileChosen = (file) => {
   };
 function App() {
   return (
-    <div className='upload-expense'>
-    <input
-      type='file'
-      id='file'
-      className='input-file'
-      accept='.csv'
-      onChange={e => handleFileChosen(e.target.files[0])}
-    />
+    <div className='bg'>
+   <form className='form'>
+  <div className='upload-expense '>
+    <label for="file"></label>
+    <input type="file" id="file" name="file" multiple />
   </div>
+  <div>
+    <button className='button'>Submit</button>
+  </div>
+</form>
+</div>
   );
 }
 
