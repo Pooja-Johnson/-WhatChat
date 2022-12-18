@@ -1,13 +1,18 @@
+import { signOut } from "firebase/auth";
 
+import React, { useContext } from 'react';
 import './App.css';
+import app from "./store/Config";
 import { useState } from 'react';
 import TransformText from './components/TransformText';
-//import { parseString } from 'whatsapp-chat-parser';
+import {useNavigate} from 'react-router-dom'
 
 function Parse() {
+  const navigate = useNavigate()
   let fileReader;
   const [content, setContent] = useState([])
   const [active_user, setActive_user] = useState('')
+
 
   const handleFileRead = (e) => {
     const messages = fileReader.result.split(/\r?\n/);
@@ -32,31 +37,41 @@ const handleFileChosen = (file) => {
     //console.log(active_user)
   };
   
+   const handleSignout = async (e) =>{
+      e.preventDefault()
+      console.log(app.auth().currentUser)
+      await app.auth().signOut().then(function() {
+        console.log('Signed Out');
+      }, function(error) {
+        console.error('Sign Out Error', error);
+      })
+      console.log(app.auth().currentUser)
+      navigate('/')
+    }
   
   return (
     <div className='bg'>
-       <form className='form'>
+       <form className='form' onSubmit={handleSubmit}>
           <div className='upload-expense '>
-              <label for="file"></label>
+              <label htmlFor="file"></label>
               <input type='file'id='file'name='file' multiple
                   onChange={e => handleFileChosen(e.target.files[0])}
                 />
           </div>
-        <form  onSubmit={handleSubmit}>
+        
       
       <br></br>
               <button className='button'>Submit</button>
-        </form>
         </form>
            <input className='Name-text' placeholder='Type active user'
             type='text'
             name='user'
             value={active_user}
             onChange={e=>{setActive_user(e.target.value)
-            }}
-        
-
-           />
+            }}/>
+           <button className="login-with-google-btn" onClick={handleSignout}>
+        Sign out
+      </button>
       <div className='message-space'>
       {content.map((mess)=>{
         return(
