@@ -1,14 +1,18 @@
-import firebase from 'firebase/compat/app'
+import { signOut } from "firebase/auth";
+
+import React, { useContext } from 'react';
+import './App.css';
+import app from "./store/Config";
 import { useState } from 'react';
 import TransformText from './components/TransformText';
-
-//import { parseString } from 'whatsapp-chat-parser';
+import {useNavigate} from 'react-router-dom'
 
 function Parse() {
+  const navigate = useNavigate()
   let fileReader;
-  //console.log(firebase.auth().currentUser)
   const [content, setContent] = useState([])
   const [active_user, setActive_user] = useState('')
+
 
   const handleFileRead = (e) => {
     const messages = fileReader.result.split(/\r?\n/);
@@ -33,30 +37,42 @@ const handleFileChosen = (file) => {
     //console.log(active_user)
   };
   
+   const handleSignout = async (e) =>{
+      e.preventDefault()
+      console.log(app.auth().currentUser)
+      await app.auth().signOut().then(function() {
+        console.log('Signed Out');
+      }, function(error) {
+        console.error('Sign Out Error', error);
+      })
+      console.log(app.auth().currentUser)
+      navigate('/')
+    }
   
   return (
     <div className='bg'>
-  <div className='upload-expense '>
-    <label for="file"></label>
-    <input
-        type='file'
-        id='file'
-        className='input-file'
-        onChange={e => handleFileChosen(e.target.files[0])}
-      />
-      <form className='form' onSubmit={handleSubmit}>
-      <input
-        type='text'
-        name='user'
-        value={active_user}
-        onChange={e=>{setActive_user(e.target.value)
-        }}
+       <form className='form' onSubmit={handleSubmit}>
+          <div className='upload-expense '>
+              <label htmlFor="file"></label>
+              <input type='file'id='file'name='file' multiple
+                  onChange={e => handleFileChosen(e.target.files[0])}
+                />
+          </div>
         
-
-      />
-
-      </form>
-      <div>
+      
+      <br></br>
+              <button className='button'>Submit</button>
+        </form>
+           <input className='Name-text' placeholder='Type active user'
+            type='text'
+            name='user'
+            value={active_user}
+            onChange={e=>{setActive_user(e.target.value)
+            }}/>
+           <button className="login-with-google-btn" onClick={handleSignout}>
+        Sign out
+      </button>
+      <div className='message-space'>
       {content.map((mess)=>{
         return(
           <div >
@@ -67,10 +83,8 @@ const handleFileChosen = (file) => {
       })}
     </div>
    {/*<TransformText text={content[0]}/>*/}
-  </div>
-  <div>
-    <button className='button'>Submit</button>
-  </div>
+  
+  
 </div>
 );
 }

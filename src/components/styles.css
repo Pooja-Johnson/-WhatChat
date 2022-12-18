@@ -1,23 +1,38 @@
 .message_block{
-    background-color: green;
+    background-color: #ffffff;
     color: #444;
-        padding: 18px 20px;
-        line-height: 26px;
+        padding: 8px 10px;
+        line-height: 20px;
         font-size: 16px;
         border-radius: 7px;
         display: inline-block;
-        position: relative
+        margin-left: 5px;
+        flex-direction: column;
+        
 }
 .message_blockright{
-    margin-left: 55%;
-
-    background-color: red;
+    margin-left: 78%;
+    margin-right: 9px;
+    position: relative;
+    float: right;
+    margin-bottom: 5px;
+    background-color: #ddf7c8;
     color: #444;
-    padding: 18px 20px;
+    padding: 10px 30px;
     line-height: 26px;
     font-size: 16px;
-    border-radius: 7px;
+    border-radius: 6px;
     display: inline-block;
-    position: relative
+    position: relative;
+    box-shadow: 0 1px 1px rgb(0 0 0 /20%);
     
+    
+}
+
+.username{
+    color: #1F7AEC;
+}
+.date{
+    font-size: small;
+    float: right;
 }
