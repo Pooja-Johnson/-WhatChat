@@ -30,9 +30,10 @@ const TransformText = ({a_user,me}) => {
       <br/>
        {msg}
        <br/>
-       {date}, 
-       {time}
+       <span className='date'>{date},{time}</span>
+      
     </div>
+    <br/> 
     <br/> 
     <br/> 
     </div>

@@ -48,7 +48,7 @@ const handleFileChosen = (file) => {
               <button className='button'>Submit</button>
         </form>
         </form>
-           <input className='Name-text'
+           <input className='Name-text' placeholder='Type active user'
             type='text'
             name='user'
             value={active_user}
