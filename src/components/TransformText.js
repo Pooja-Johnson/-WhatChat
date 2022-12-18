@@ -39,9 +39,8 @@ const TransformText = ({a_user,me}) => {
       
     
     </div>
-    <br/> 
-    <br/> 
-
+    <br/>
+    <br/>
     </>
     
     )
