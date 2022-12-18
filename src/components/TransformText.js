@@ -24,19 +24,25 @@ const TransformText = ({a_user,me}) => {
     // <br></br>
     
     return (
-    <div>
+    <>
     <div className={user.localeCompare(a_user)===0 ? "message_blockright" : "message_block"}>
-      <span className='username'>{user}</span>
+
+      
+
+    
+  
+      <span className={user.localeCompare(a_user)===0 ? "user1" : "user2"}>{user}</span>
       <br/>
        {msg}
        <br/>
        <span className='date'>{date},{time}</span>
       
+    
     </div>
     <br/> 
     <br/> 
-    <br/> 
-    </div>
+
+    </>
     
     )
 }

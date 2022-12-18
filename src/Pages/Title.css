@@ -1,0 +1,16 @@
+.Titles {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    padding: 1em;
+   
+    margin-bottom: 2em;
+    background-color: rgb(7, 71, 47);
+    color: #fff;
+    background-image: url(logow.png);
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    background-position: 35rem 11px;
+  }

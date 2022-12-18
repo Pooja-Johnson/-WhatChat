@@ -1,5 +1,7 @@
 
 import './App.css';
+
+
 import { useState } from 'react';
 import TransformText from './components/TransformText';
 //import { parseString } from 'whatsapp-chat-parser';
@@ -48,7 +50,7 @@ const handleFileChosen = (file) => {
               <button className='button'>Submit</button>
         </form>
         </form>
-           <input className='Name-text' placeholder='Type active user'
+           <input className='Name-text' placeholder='Enter active user'
             type='text'
             name='user'
             value={active_user}
