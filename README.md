@@ -28,6 +28,7 @@ Exported whatsapp chats are available to users as a text file, which are inconve
 - The text file uploaded by the user is read line-by-line and stored as a list of message
 - Each message is parsed using delimiters 
 - The messages are aligned to left hand side and right hand side based on the input Active User, given by end user
+- For more details and the live version of the project, visit [WhatChat](https://whatchat-eb1e2.web.app/).
 ## Screenshots
 - Sign In
 ![1](https://user-images.githubusercontent.com/75480066/208288133-8b1e0060-f7bb-4432-972e-4f5d7e359f2f.jpeg)
